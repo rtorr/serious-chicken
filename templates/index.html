@@ -1,0 +1,35 @@
+{% extends "main_layout.html" %}
+
+{% set active_page = 'index' -%}
+
+{% block content %}
+
+    <div class="container">
+        <div class="row">
+            <div class="span3">
+                <a class="logo" href="/">Serious Chicken</a>
+                <ul class="nav nav-list">
+                    {% for href, id, caption in navigation_bar %}
+                        <li{% if id == active_page %} class="active"{% endif%}>
+                            <a href="{{ href|e }}">{{ caption|e }}</a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="span9">
+                <div class="page-header">
+                    <h2>Serious Chicken</h2>
+                    <p>Welcome to the serious chicken static site generator home page.</p>
+                </div>
+                <p>All kidding a side, this project was trying to hit a few points:</p>
+                <ul>
+                    <li>Instead of building a full separate application, use libraries that make use of this tech and throw them together to make a <strong>small</strong> static site generator</li>
+                    <li>Make pages and templates easily customizable, use markdown with metadata</li>
+                    <li>Keep both develop and build fast and smooth. While developing, is is just your average dynamic python site, then you use the build command later on to generate the static pages</li>
+                </ul>
+                <p>You can take a look at the source <a href="https://github.com/rtorr/serious-chicken">here.</a></p>
+                <p>Code examples are soon to come.</p>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

@@ -1,0 +1,67 @@
+
+html, body {
+    height: 100%;
+}
+
+body {
+    background: #f1e8c7;
+}
+
+h1, h2, h3, h4, h5, p {
+    color: #4b4d40;
+}
+
+a, a:hover, .nav > li > a:hover {
+    color: #4b4d40;
+    text-decoration: underline;
+}
+
+.wrapper {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto -63px;
+}
+.push {
+    height: 63px;
+}
+
+.wrapper > .container {
+    padding-top: 60px;
+}
+
+.logo {
+    background: url('../img/chickens.jpg');
+    display: inline-block;
+    height: 231px;
+    text-indent: -9999px;
+    width: 235px;
+}
+
+.nav-list > .active > a, .nav-list > .active > a:hover {
+    background-color: #f5cd39;
+    color: #4b4d40;
+    text-decoration: underline;
+    text-shadow: 0 -1px 0 rgba(225, 225, 225, 0.2);
+}
+
+.page-header {
+    border-bottom: 1px solid #4b4d40;
+}
+
+footer {
+    background: #222;
+    border-top: 1px solid #000;
+    color: #666;
+    padding: 17px 0 18px 0;
+    text-align: center;
+}
+footer a {
+    color: #999;
+    text-decoration: none;
+}
+footer a:hover {
+    color: #efefef;
+    text-decoration: none;
+}
+

@@ -1,0 +1,28 @@
+{% extends "main_layout.html" %}
+
+{% set active_page = 'index' -%}
+
+{% block content %}
+
+    <div class="container">
+        <div class="row">
+            <div class="span3">
+                <a class="logo" href="/">Serious Chicken</a>
+                <ul class="nav nav-list">
+                    {% for href, id, caption in navigation_bar %}
+                        <li{% if id == active_page %} class="active"{% endif%}>
+                            <a href="{{ href|e }}">{{ caption|e }}</a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="span9">
+                {% for page in pages %}
+                    <li>
+                        <a href="{{ url_for("page", path=page.path) }}">{{ page.title }}</a>
+                    </li>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock content %}
