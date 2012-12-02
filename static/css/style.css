@@ -16,6 +16,10 @@ a, a:hover, .nav > li > a:hover {
     text-decoration: underline;
 }
 
+.span3 {
+    overflow: hidden;
+}
+
 .wrapper {
     min-height: 100%;
     height: auto !important;
