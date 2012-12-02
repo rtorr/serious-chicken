@@ -10,7 +10,7 @@
                 <ul class="nav nav-list">
                     {% for href, id, caption in navigation_bar %}
                         <li{% if id == active_page %} class="active"{% endif%}>
-                            <a href="{{ href|e }}">{{ caption|e }}</a>
+                            <a href="{{ url_for('.index')+href|e }}">{{ caption|e }}</a>
                         </li>
                     {% endfor %}
                 </ul>
