@@ -1,4 +1,4 @@
-#Serious Chicken#
+#Serious Chicken
 
 Requirements:
 
@@ -12,8 +12,8 @@ demo:
 
 dev run:
 
-- python static_site.py
+- python serious_chicken.py
 
 generate static site:
 
-- python static_site.py build
+- python serious_chicken.py build
