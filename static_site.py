@@ -1,11 +1,8 @@
-__author__ = 'rtorruellas'
-
 import sys
 import navigation
 from flask import Flask, render_template
 from flask_flatpages import FlatPages
 from flask_frozen import Freezer
-
 
 DEBUG = True
 FLATPAGES_AUTO_RELOAD = DEBUG
@@ -15,8 +12,8 @@ app = Flask(__name__)
 app.config.from_object(__name__)
 
 app.config.update(
-    FREEZER_RELATIVE_URLS = True,
-    FREEZER_BASE_URL = 'http://rtorr.github.com/serious-chicken',
+    FREEZER_RELATIVE_URLS=True,
+    FREEZER_BASE_URL='http://rtorr.github.com/serious-chicken',
 )
 
 pages = FlatPages(app)
@@ -26,7 +23,7 @@ nav = navigation.main_nav_method()
 
 @app.route('/')
 def index():
-    return render_template('index.html', nav=nav)
+    return render_template('index.html', pages=pages, nav=nav)
 
 @app.route('/<path:path>/')
 def page(path):
@@ -37,8 +34,22 @@ def page(path):
 def site_map():
     return render_template('map.html', pages=pages, nav=nav)
 
+serious_chicken = """
+   _/ }
+  `>' )
+   `|  )
+    |  /'-.    .-.
+    \'   ';`--' .'
+     \'.   `'-./
+      '.`"-..-;`
+        `;-..'
+        _| _|
+        /` /`
+"""
 if __name__ == '__main__':
     if len(sys.argv) > 1 and sys.argv[1] == "build":
+        sys.stdout.write(serious_chicken)
         freezer.freeze()
+        sys.stdout.flush()
     else:
         app.run(port=8000)
